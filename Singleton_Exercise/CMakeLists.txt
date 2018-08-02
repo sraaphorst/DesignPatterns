@@ -1,0 +1,1 @@
+add_executable(Singleton_Exercise Singleton_Exercise.cpp)

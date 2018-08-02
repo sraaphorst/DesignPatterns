@@ -1,0 +1,83 @@
+cmake_minimum_required(VERSION 3.12)
+project(DesignPatterns)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+include_directories(${PROJECT_SOURCE_DIR})
+
+find_package(Boost 1.67 COMPONENTS serialization REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
+
+# ********** GOOGLE TEST **********
+# Download and unpack googletest at configure time.
+# Requires the CMakeLists.txt.in file.
+configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
+execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+if(result)
+    message(FATAL_ERROR "CMake step for googletest failed: ${result}")
+endif()
+execute_process(COMMAND ${CMAKE_COMMAND} --build .
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+if(result)
+    message(FATAL_ERROR "Build step for googletest failed: ${result}")
+endif()
+
+# Prevent overriding the parent project's compiler/linker
+# settings on Windows
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+# Add googletest directly to our build. This defines
+# the gtest and gtest_main targets.
+add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
+        ${CMAKE_BINARY_DIR}/googletest-build
+        EXCLUDE_FROM_ALL)
+
+# The gtest/gtest_main targets carry header search path
+# dependencies automatically when using CMake 2.8.11 or
+# later. Otherwise we have to add them here ourselves.
+if (CMAKE_VERSION VERSION_LESS 2.8.11)
+    include_directories("${gtest_SOURCE_DIR}/include")
+endif()
+
+# Now simply link against gtest or gtest_main as needed. Eg
+#add_executable(example example.cpp)
+#target_link_libraries(example gtest_main)
+#add_test(NAME example_test COMMAND example)
+# ******************************
+
+
+add_executable(lecture_01_single_responsibility_principle lecture_01_single_responsibility_principle.cpp)
+
+add_executable(lecture_02_open_closed_principle_problem lecture_02_open_closed_principle_problem.cpp)
+add_executable(lecture_02_open_closed_principle_solution lecture_02_open_closed_principle_solution.cpp)
+
+add_executable(lecture_03_liskov_substitution_principle lecture_03_liskov_substitution_principle.cpp)
+
+add_executable(lecture_04_interface_segregation_principle_problem lecture_04_interface_segregation_principle_problem.cpp)
+add_executable(lecture_04_interface_segregation_principle_solution lecture_04_interface_segregation_principle_solution.cpp)
+
+add_executable(lecture_05_dependency_inversion_principle_problem lecture_05_dependency_inversion_principle_problem.cpp)
+add_executable(lecture_05_dependency_inversion_principle_solution lecture_05_dependency_inversion_principle_solution.cpp)
+
+add_executable(lecture_06_builder_problem lecture_06_builder_problem.cpp)
+add_executable(lecture_06_builder lecture_06_builder.cpp)
+add_executable(lecture_07_fluent_builder lecture_07_fluent_builder.cpp)
+add_executable(lecture_08_groovy_style_builder lecture_08_groovy_style_builder.cpp)
+add_executable(lecture_09_builder_facets Builder/Person.cpp)
+
+add_subdirectory(Builder)
+add_subdirectory(Builder_Exercise)
+
+add_subdirectory(Factory)
+add_subdirectory(Factory_Exercise)
+
+add_subdirectory(Prototype)
+add_subdirectory(Prototype_Exercise)
+
+add_subdirectory(Singleton)
+add_subdirectory(Singleton_Exercise)

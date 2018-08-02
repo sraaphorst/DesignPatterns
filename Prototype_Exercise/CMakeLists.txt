@@ -1,0 +1,1 @@
+add_executable(Prototype_Exercise Prototype_Exercise.cpp)

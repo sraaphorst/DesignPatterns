@@ -1,0 +1,5 @@
+add_executable(Prototype Prototype.cpp)
+add_executable(PrototypeFactory PrototypeFactory.cpp)
+
+add_executable(PrototypeViaSerialization PrototypeViaSerialization.cpp)
+target_link_libraries(PrototypeViaSerialization ${Boost_SERIALIZATION_LIBRARY})
