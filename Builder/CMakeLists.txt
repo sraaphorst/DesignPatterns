@@ -1,4 +1,4 @@
-add_executable(person_manager
-        main.cpp
+add_executable(PersonManager
+        PersonManager.cpp
         Person.cpp
         PersonBuilder.cpp)

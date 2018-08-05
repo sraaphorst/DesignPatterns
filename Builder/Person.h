@@ -8,6 +8,8 @@ using namespace std;
 class PersonBuilder;
 
 class Person {
+    string name;
+
     // Address information
     string street_address;
     string post_code;
@@ -25,6 +27,7 @@ public:
     friend class PersonAddressBuilder;
     friend class PersonJobBuilder;
 
+    friend ostream &operator<<(ostream &out, const Person &p);
     };
 
 ostream &operator<<(ostream &out, const Person &p);

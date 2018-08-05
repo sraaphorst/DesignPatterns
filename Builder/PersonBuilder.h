@@ -50,10 +50,13 @@ public:
  * Note that this is a FACADE.
  */
 class PersonBuilder : public PersonBuilderBase {
+    using Self = PersonBuilder;
 private:
     Person p;
 public:
     PersonBuilder();
+
+    Self &named(std::string name);
 };
 
 

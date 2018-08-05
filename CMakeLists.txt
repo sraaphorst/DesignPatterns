@@ -50,25 +50,7 @@ endif()
 #add_test(NAME example_test COMMAND example)
 # ******************************
 
-
-add_executable(lecture_01_single_responsibility_principle lecture_01_single_responsibility_principle.cpp)
-
-add_executable(lecture_02_open_closed_principle_problem lecture_02_open_closed_principle_problem.cpp)
-add_executable(lecture_02_open_closed_principle_solution lecture_02_open_closed_principle_solution.cpp)
-
-add_executable(lecture_03_liskov_substitution_principle lecture_03_liskov_substitution_principle.cpp)
-
-add_executable(lecture_04_interface_segregation_principle_problem lecture_04_interface_segregation_principle_problem.cpp)
-add_executable(lecture_04_interface_segregation_principle_solution lecture_04_interface_segregation_principle_solution.cpp)
-
-add_executable(lecture_05_dependency_inversion_principle_problem lecture_05_dependency_inversion_principle_problem.cpp)
-add_executable(lecture_05_dependency_inversion_principle_solution lecture_05_dependency_inversion_principle_solution.cpp)
-
-add_executable(lecture_06_builder_problem lecture_06_builder_problem.cpp)
-add_executable(lecture_06_builder lecture_06_builder.cpp)
-add_executable(lecture_07_fluent_builder lecture_07_fluent_builder.cpp)
-add_executable(lecture_08_groovy_style_builder lecture_08_groovy_style_builder.cpp)
-add_executable(lecture_09_builder_facets Builder/Person.cpp)
+add_subdirectory(Lectures)
 
 add_subdirectory(Builder)
 add_subdirectory(Builder_Exercise)

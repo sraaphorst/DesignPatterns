@@ -12,6 +12,11 @@ PersonJobBuilder PersonBuilderBase::works() const {
     return PersonJobBuilder{person};
 }
 
+PersonBuilder &PersonBuilder::named(std::string name) {
+    person.name = std::move(name);
+    return *this;
+}
+
 
 
 PersonBuilder::PersonBuilder() : PersonBuilderBase(p) {}

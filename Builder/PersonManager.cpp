@@ -25,6 +25,7 @@ int main() {
      * Final step is to cast the builder to a final person.
      **/
     Person p = Person::create()
+            .named("Felix Yagunglepuss")
             .lives().at("123 London Road")
                     .with_postcode("SW1 1GB")
                     .in("London")

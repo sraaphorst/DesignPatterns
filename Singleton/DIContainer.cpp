@@ -28,8 +28,7 @@ struct Foo : public IFoo {
     Foo() { ++id; }
 
     /**
-     * Not 100% sure why we have the string literal suffix s:
-     * https://en.cppreference.com/w/cpp/string/basic_string/operator%22%22s
+     * I guess we use the string suffix s to make sure we are not trying to add const char[5] and string?
      */
     string name() override {
         return "foo "s + lexical_cast<string>(id);
