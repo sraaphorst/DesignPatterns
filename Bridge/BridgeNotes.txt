@@ -1,0 +1,25 @@
+For connecting components together through abstraction.
+Prevents a Cartesian product complexity explosion.
+
+Example:
+Base class ThreadScheduler, preemptive or cooperative, runs on Windows or Linux.
+End up with a 2x2 scenario:
+
+ThreadScheduler
+|-- PreemptiveThreadScheduler
+|---- WindowsPTS
+|---- LinuxPTS
+|-- CooperativeThreadScheduler
+|---- WindowsCTS
+|---- LinuxXTS
+
+Instead:
+
+ThreadScheduler.platformScheduler
+|-- IPlatformScheduler
+|---- WindowsScheduler
+|---- LinuxScheduler
+|-- PreemptiveThreadScheduler
+|-- CooperativeThreadScheduler
+
+Bridge: A mechanism that decouples an interface (hierarchy) from an implementation (hierarchy).

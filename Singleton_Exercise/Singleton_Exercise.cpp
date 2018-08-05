@@ -28,4 +28,8 @@ int main() {
     SingletonTester tester;
     function<Singleton*()> f = Singleton::factory;
     assert(tester.is_singleton(f));
+    Singleton s2 = *Singleton::factory();
+    assert(s2.factory() == Singleton::factory());
+    Singleton s3{s2};
+    assert(s3.factory() == Singleton::factory());
 }

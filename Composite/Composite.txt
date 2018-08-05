@@ -1,0 +1,9 @@
+Composite design pattern:
+
+Idea: Treating individual and aggregate objects uniformly.
+Objects typically use other objects' fields, members, etc. through inheritance or composition.
+
+E.g. 1: You can use composition to make a mathematical expression out of simpler expressions.
+E.g. 2: Drawing application: you could have a grouping of shapes selected together instead of just a single shape.
+
+Thus, Foo and Collection<Foo> have common APIs.

@@ -81,3 +81,11 @@ add_subdirectory(Prototype_Exercise)
 
 add_subdirectory(Singleton)
 add_subdirectory(Singleton_Exercise)
+
+add_subdirectory(Adapter)
+add_subdirectory(Adapter_Exercise)
+
+add_subdirectory(Bridge)
+add_subdirectory(Bridge_Exercise)
+
+add_subdirectory(Composite)

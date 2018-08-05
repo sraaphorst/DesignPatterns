@@ -1,0 +1,1 @@
+add_executable(Adapter_Exercise Adapter_Exercise.cpp)
