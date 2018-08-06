@@ -1,0 +1,10 @@
+Decorator:
+* We want to take an existing object, and give it additional functionality.
+* We would prefer to keep the open-closed principle, so not modify the existing source (which, indeed, we might not
+  even have).
+* Also satisfies the single-responsibility principle, keeping new functionality separate.
+* Need to be able to interact with the existing structures.
+
+Two primary ways to implement decorators:
+1. Dynamic Decorator: aggregate the decorated object (object has a).
+2. Inherit from the decorated object (object is a).
