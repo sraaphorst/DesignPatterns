@@ -71,3 +71,6 @@ add_subdirectory(Bridge)
 add_subdirectory(Bridge_Exercise)
 
 add_subdirectory(Composite)
+add_subdirectory(Composite_Exercise)
+
+add_subdirectory(Decorator)

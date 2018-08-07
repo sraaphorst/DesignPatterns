@@ -1,0 +1,1 @@
+add_executable(Composite_Exercise Composite_Exercise.cpp)
