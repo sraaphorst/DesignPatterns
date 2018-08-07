@@ -4,6 +4,7 @@
 #include <memory>
 #include <ostream>
 #include <string>
+#include <sstream>
 
 struct Shape {
     virtual std::string str() const = 0;
@@ -48,10 +49,10 @@ private:
 
 /*** DECORATOR FOR COLOURED SHAPES ***/
 struct ColouredShape : Shape {
-    std::shared_ptr<Shape> shape;
     std::string colour;
+    std::shared_ptr<Shape> shape;
 
-    ColouredShape(const std::string &colour, const std::shared_ptr<Shape> shape) : shape(shape), colour(colour) {
+    ColouredShape(const std::shared_ptr<Shape> &shape, const std::string &colour) : shape(shape), colour(colour) {
         if (!colour.empty())
             this->colour[0] = toupper(this->colour[0]);
     }
@@ -61,11 +62,29 @@ struct ColouredShape : Shape {
     }
 };
 
+struct TransparentShape : Shape {
+    uint8_t transparency;
+    std::shared_ptr<Shape> shape;
+
+    TransparentShape(const std::shared_ptr<Shape> &shape, uint8_t transparency) : shape(shape),
+                                                                                  transparency(transparency) {}
+
+    std::string str() const override {
+        std::ostringstream oss;
+        oss << shape->str() << " has "
+            << static_cast<double>(transparency) / 255 * 100
+            << "% transparency";
+        return oss.str();
+    }
+};
 
 int main() {
     Circle c{1};
     std::cout << c << std::endl;
 
-    ColouredShape cs{"red", std::make_shared<Square>(4)};
+    ColouredShape cs{std::make_shared<Square>(4), "red"};
     std::cout << cs << std::endl;
+
+    TransparentShape ts{std::make_shared<ColouredShape>(cs), 200};
+    std::cout << ts << std::endl;
 }

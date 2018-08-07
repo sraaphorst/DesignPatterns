@@ -1,1 +1,2 @@
 add_executable(DynamicDecorator DynamicDecorator.cpp)
+add_executable(StaticDecorator StaticDecorator.cpp)
