@@ -1,6 +1,5 @@
-#include "Composite_Exercise.h"
 #include <iostream>
-#include <vector>
+#include "Composite_Exercise.h"
 
 /**
  * Consider the code presented below. The sum() function takes a vector of pointers to either SingleValue
