@@ -1,13 +1,10 @@
-Want to add extra functionality to an object, but want to maintain the open-closed principle (i.e. not change the
-object's source code) and also want to satisfy single responsibility principle (this is a separate concern, should be
-in a separate class.)
+Decorator:
+* We want to take an existing object, and give it additional functionality.
+* We would prefer to keep the open-closed principle, so not modify the existing source (which, indeed, we might not
+  even have).
+* Also satisfies the single-responsibility principle, keeping new functionality separate.
+* Need to be able to interact with the existing structures.
 
-Options:
-
-1. Dynamic decorator:
-Aggregate the decorated object. Take object, stick it in as a reference, and provide additional functionality.
-
-2. Inherit from the object.
-
-Definition: pattern with facilitates access to the object / adds additional behaviour within the framework of what
-is already available.
+Two primary ways to implement decorators:
+1. Dynamic Decorator: aggregate the decorated object (object has a).
+2. Inherit from the decorated object (object is a).

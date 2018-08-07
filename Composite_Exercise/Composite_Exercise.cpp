@@ -1,6 +1,5 @@
-#include "exercise.h"
 #include <iostream>
-#include <vector>
+#include "Composite_Exercise.h"
 
 /**
  * Consider the code presented below. The sum() function takes a vector of pointers to either SingleValue
@@ -25,10 +24,10 @@ int sum(const std::vector<ContainsIntegers*> items) {
 }
 
 int main() {
-    SingleValue single_value{1};
-    ManyValues other_values;
-    other_values.add(2);
-    other_values.add(3);
-    int s = sum({&single_value, &other_values});
-    std::cout << s << std::endl;
+    SingleValue sv1{10};
+    SingleValue sv2{15};
+    ManyValues  mv1{1, 2, 3, 4, 5};
+    ManyValues  mv2{6, 7, 8, 9, 10};
+    std::vector<ContainsIntegers*> v{&sv1, &mv1, &sv2, &mv2};
+    std::cout << "sum is: " << sum(v) << std::endl;
 }
