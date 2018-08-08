@@ -1,0 +1,1 @@
+add_executable(Decorator_Exercise Decorator_Exercise.cpp)

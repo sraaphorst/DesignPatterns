@@ -1,0 +1,7 @@
+* Avoid redundancy when storing data.
+* E.g. MMORPG: Lots of users with identical first and / or last names.
+* No point in storing same names over and over again.
+* Instead, just keep some kind of index or pointer to those names.
+* Another example: individual characters in a form of text.
+* Don't want to format individual characters, but whole words, paragraphs, etc.
+* Flyweight: space optimization technique, store common data externally.

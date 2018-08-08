@@ -31,6 +31,11 @@ struct Circle : Shape {
     std::string str() const override {
         return "Circle(" + toString(radius) + ')';
     }
+
+    /// Here we would lose resize, because it would be buried in ownership.
+    void resize(double factor) {
+        radius *= factor;
+    }
 private:
     double radius;
 };
@@ -43,6 +48,10 @@ struct Square : Shape {
         return "Square(" + toString(side) + ')';
     }
 
+    /// Here we would lose resize, because it would be buried in ownership.
+    void resize(double factor) {
+        side *= factor;
+    }
 private:
     double side;
 };
@@ -84,6 +93,8 @@ int main() {
     std::cout << c << std::endl;
 
     ColouredShape cs{std::make_shared<Square>(4), "red"};
+    /// This is lost, unlike with static decoration.
+    ///cs.resize(10);
     std::cout << cs << std::endl;
 
     TransparentShape ts{std::make_shared<ColouredShape>(cs), 200};

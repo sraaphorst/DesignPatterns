@@ -74,3 +74,9 @@ add_subdirectory(Composite)
 add_subdirectory(Composite_Exercise)
 
 add_subdirectory(Decorator)
+add_subdirectory(Decorator_Exercise)
+
+add_subdirectory(Facade)
+
+add_subdirectory(Flyweight)
+add_subdirectory(Flyweight_Exercise)

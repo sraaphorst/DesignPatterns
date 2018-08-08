@@ -7,4 +7,8 @@ Decorator:
 
 Two primary ways to implement decorators:
 1. Dynamic Decorator: aggregate the decorated object (object has a).
-2. Inherit from the decorated object (object is a).
+    e.g. ColouredShape{Square{}}
+2. Static decorator: inherit from the decorated object (object is a).
+    Mixin inheritance: ColouredShape<Square>
+    Using templates.
+Both of these allow limitless composition (piling decorators on top of decorators).

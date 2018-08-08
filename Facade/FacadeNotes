@@ -1,0 +1,7 @@
+Idea: exposing several components through a single interface.
+* Example: house.
+* A house is a system that tries to balance complexity with presentation and usability.
+* Has many subsystems: electicity, sanitation, etc.
+* End user is not exposed to internals.
+* API consumers want APIs to just work without having to understand the underlying complexity.
+* Therefore, provide a simple, easy to understand interface over a larger body of code.

@@ -1,0 +1,3 @@
+add_executable(Flyweight Flyweight.cpp)
+add_executable(PrebuiltFlyweight PrebuiltFlyweight.cpp)
+add_executable(TextFormatting TextFormatting.cpp)
