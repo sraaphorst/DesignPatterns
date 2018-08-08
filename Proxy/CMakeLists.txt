@@ -1,0 +1,4 @@
+add_executable(SmartPointers SmartPointers.cpp)
+add_executable(PropertyProxy PropertyProxy.cpp)
+add_executable(VirtualProxy  VirtualProxy.cpp)
+add_executable(CommunicationProxy CommunicationProxy.cpp)

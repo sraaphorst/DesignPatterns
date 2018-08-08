@@ -1,0 +1,15 @@
+Proxy: An interface for accessing a particular resource.
+Interface looks just like the interface of the object you're attempting to access.
+
+Example: Calling foo.bar().
+Assumes foo is in the same process as bar.
+What if, later on, you decide you want to put all foo operations in a separate process?
+Can you avoid changing your code?
+Proxy to the rescue! Same interface, different behaviour behind the scenes.
+This particular proxy is called a communication proxy.
+
+Other types: logging, virtual, guarding.
+
+Formal definition:
+A class that functions as an interface to a particular resource.
+That resource may be remote, expensive to construct, or may require logging or other functionality.

@@ -80,3 +80,5 @@ add_subdirectory(Facade)
 
 add_subdirectory(Flyweight)
 add_subdirectory(Flyweight_Exercise)
+
+add_subdirectory(Proxy)
