@@ -1,3 +1,3 @@
-# DesignPatterns
+# Udemy Design Patterns in C++
 
-Self-study from Udemy course: https://www.udemy.com/patterns-cplusplus
+https://www.udemy.com/patterns-cplusplus
